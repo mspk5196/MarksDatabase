@@ -11,9 +11,9 @@ function App() {
   return (
     <div>
       <Routes>
-       <Route path='/' element={<LoginPage/>}/>
-       <Route path='/Login' element={<LoginPage/>}/>
-       <Route path='/Home' element={user == null ? (<LoginPage />) : (<Home />)}/>
+       <Route path='/MarksDatabase/' element={<LoginPage/>}/>
+       <Route path='/MarksDatabase/Login' element={<LoginPage/>}/>
+       <Route path='/MarksDatabase/Home' element={user == null ? (<LoginPage />) : (<Home />)}/>
       </Routes>
     </div>
   )
