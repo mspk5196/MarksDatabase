@@ -14,22 +14,22 @@ export default function LoginPage() {
         e.preventDefault();
         login({username});
 
-        if(username=="sample@gmail.com" &&password=="sample"){
+        // if(username=="sample@gmail.com" &&password=="sample"){
             console.log("Login Success");
             navigate('/MarksDatabase/Home');
-        }
-        else{
-            console.log("Invalid Credentials");
-            alert("Invalid Username/Password");
-            navigate('/MarksDatabase/')
-        }
+        // }
+        // else{
+        //     console.log("Invalid Credentials");
+        //     alert("Invalid Username/Password");
+        //     navigate('/MarksDatabase/')
+        // }
     }
   return (
     <div className="login-page">
         <h1>Login Page</h1>
         <form onSubmit={verifyLogin}>
             <label>Username:</label>
-            <input type="text" placeholder="username" value={username} onChange={(e)=>setUsername(e.target.value)}/>
+            <input type="email" placeholder="username" value={username} onChange={(e)=>setUsername(e.target.value)}/>
             <br/>
             <label>Password: </label>
             <input type="password" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)}/>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/addMarks.css'
 import UserDetails from '../components/UserDetails'
+import { useNavigate } from 'react-router-dom';
 
 export default function AddMarks() {
 
@@ -9,6 +10,8 @@ export default function AddMarks() {
     const [subject3, setsubject3]=useState("");
     const [subject4, setsubject4]=useState("");
     const [subject5, setsubject5]=useState("");
+
+    const navigate=useNavigate();
 
     const { user, login, logout } = UserDetails();
     const calculateTotal = () => {
@@ -55,22 +58,20 @@ export default function AddMarks() {
     return (
         <div className='addMarks'>
             <h3>Add marks: </h3>
-            <div>
-                <input type="number" placeholder='Enter mark 1' onChange={(e) => setsubject1(e.target.value)} />
-            </div>
-            <div>
-                <input type="number" placeholder='Enter mark 2' onChange={(e) => setsubject2(e.target.value)} />
-            </div>
-            <div>
-                <input type="number" placeholder='Enter mark 3' onChange={(e) => setsubject3(e.target.value)} />
-            </div>
-            <div>
-                <input type="number" placeholder='Enter mark 4' onChange={(e) => setsubject4(e.target.value)} />
-            </div>
-            <div>
-                <input type="number" placeholder='Enter mark 5' onChange={(e) => setsubject5(e.target.value)} />
-            </div>
-            <button onClick={handleSubmit}>Submit</button>
+            <form onSubmit={handleSubmit}>
+            
+                <input type="number" placeholder='Enter mark 1' onChange={(e) => setsubject1(e.target.value)} required/>
+           
+                <input type="number" placeholder='Enter mark 2' onChange={(e) => setsubject2(e.target.value)} required/>
+            
+                <input type="number" placeholder='Enter mark 3' onChange={(e) => setsubject3(e.target.value)} required/>
+            
+                <input type="number" placeholder='Enter mark 4' onChange={(e) => setsubject4(e.target.value)} required/>
+            
+                <input type="number" placeholder='Enter mark 5' onChange={(e) => setsubject5(e.target.value)} required/>
+            <br />
+            <button>Submit</button>
+            </form>
         </div>
     )
 }
